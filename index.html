@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdClub Preloader</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100%;
+        }
+        .loader-container::before{
+        }
+        .loader-container::after{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            background: #74b1e4;
+            border-radius: 4px;
+            transform: translate(-50%, -50%);
+            transition: transform 2s ease;
+            transform-origin: center;
+            animation: animate 2s linear infinite, bounce .5s linear infinite alternate;
+        }
+
+        @keyframes animate {
+            0%{
+                transform: rotateZ(0deg);
+            }
+            25%{
+                transform: rotateZ(90deg);
+            }
+            50%{
+                transform: rotateZ(180deg);
+            }
+            75%{
+                transform: rotateZ(270deg);
+            }
+            100%{
+                transform: rotateZ(360deg);
+            }
+        }
+        @keyframes bounce {
+            0%{
+                top:50%;
+            }
+            25%{
+                top:47%;
+            }
+            50%{
+                top:46%;
+            }
+            75%{
+                top:47%;
+            }
+            100%{
+                top:50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+
+    </div>
+</body>
+</html>
